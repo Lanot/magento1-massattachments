@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento admin config
+ *
+ * @author Lanot
+ */
+-->
+<config>
+
+    <!--/MENU -->
+    <menu>
+        <lanot translate="title">
+            <title>Lanot</title>
+            <sort_order>65</sort_order>
+            <children>
+                <lanot_massattachments translate="title" module="lanot_massattachments">
+                    <title>Mass Attachments</title>
+                    <action>lanotmassattachmnets/adminhtml_set</action>
+                    <sort_order>30</sort_order>
+                </lanot_massattachments>
+            </children>
+        </lanot>
+    </menu>
+    <!--/MENU -->
+
+    <!-- ACL CONFIGURATION -->
+    <acl>
+        <resources>
+            <admin>
+                <children>
+
+                    <lanot>
+                        <title>Lanot</title>
+                        <sort_order>65</sort_order>
+                        <children>
+                            <lanot_massattachments>
+                                <title>Lanot Mass Attachments</title>
+                                <sort_order>65</sort_order>
+                                <children>
+                                    <manage_set>
+                                        <title>Manage Attachments Sets</title>
+                                        <sort_order>0</sort_order>
+                                        <children>
+                                            <save translate="title">
+                                                <title>Save</title>
+                                                <sort_order>0</sort_order>
+                                            </save>
+                                            <delete translate="title">
+                                                <title>Delete</title>
+                                                <sort_order>10</sort_order>
+                                            </delete>
+                                            <assign translate="title">
+                                                <title>Assign</title>
+                                                <sort_order>30</sort_order>
+                                            </assign>
+                                        </children>
+                                    </manage_set>
+                                </children>
+                            </lanot_massattachments>
+                        </children>
+                    </lanot>
+
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <!--/ACL CONFIGURATION -->
+</config>

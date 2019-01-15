@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Magento backend layout
+ *
+ * @author Lanot
+ */
+-->
+<layout>
+
+    <catalog_category_attachments>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>css/lanot_attachments.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="lanot_massattachments/category_view" name="category.view.lanot.attachments" as="lanot_attachments" />
+        </reference>
+    </catalog_category_attachments>
+
+    <cms_page>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>css/lanot_attachments.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="lanot_massattachments/cmspage_view" name="cmspage.view.lanot.attachments" as="lanot_attachments" />
+        </reference>
+    </cms_page>
+
+    <catalog_category_default>
+        <update handle="catalog_category_attachments" />
+    </catalog_category_default>
+
+    <catalog_category_layered>
+        <update handle="catalog_category_attachments" />
+    </catalog_category_layered>
+
+</layout>

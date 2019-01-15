@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Lanot_Attachments>
+            <version>3.0.0</version>
+        </Lanot_Attachments>
+    </modules>
+
+    <global>
+
+        <helpers>
+            <lanot_attachments>
+                <class>Lanot_Attachments_Helper</class>
+            </lanot_attachments>
+        </helpers>
+
+        <blocks>
+            <lanot_attachments>
+                <class>Lanot_Attachments_Block</class>
+            </lanot_attachments>
+        </blocks>
+
+        <models>
+            <lanot_attachments>
+                <class>Lanot_Attachments_Model</class>
+                <resourceModel>lanot_attachments_resource</resourceModel>
+            </lanot_attachments>
+            <lanot_attachments_resource>
+                <class>Lanot_Attachments_Model_Mysql4</class>
+                <entities>
+                    <entity><table>lanot_attachments_entity</table></entity>
+                    <titles><table>lanot_attachments_titles</table></titles>
+                    <links><table>lanot_attachments_links</table></links>
+                    <products><table>lanot_attachments_product</table></products>
+                </entities>
+            </lanot_attachments_resource>
+        </models>
+        <resources>
+            <lanot_attachments_setup>
+                <setup>
+                    <module>Lanot_Attachments</module>
+                </setup>
+            </lanot_attachments_setup>
+        </resources>
+    </global>
+
+    <adminhtml>
+
+        <!-- OBSERVER EVENTS -->
+        <events>
+            <!-- CATALOG PRODUCT EVENTS -->
+            <catalog_product_save_after>
+                <observers>
+                    <lanot_attachments>
+                        <type>singleton</type>
+                        <class>lanot_attachments/observer</class>
+                        <method>catalogProductSaveAfter</method>
+                    </lanot_attachments>
+                </observers>
+            </catalog_product_save_after>
+            <catalog_product_delete_before>
+                <observers>
+                    <lanot_attachments>
+                        <type>singleton</type>
+                        <class>lanot_attachments/observer</class>
+                        <method>catalogProductDeleteBefore</method>
+                    </lanot_attachments>
+                </observers>
+            </catalog_product_delete_before>
+            <catalog_product_delete_after>
+                <observers>
+                    <lanot_attachments>
+                        <type>singleton</type>
+                        <class>lanot_attachments/observer</class>
+                        <method>catalogProductDeleteAfter</method>
+                    </lanot_attachments>
+                </observers>
+            </catalog_product_delete_after>
+            <!--/CATALOG PRODUCT EVENTS -->
+        </events>
+        <!--/OBSERVER EVENTS -->
+
+        <layout>
+            <updates>
+                <lanot_attachments>
+                    <file>lanot_attachments.xml</file>
+                </lanot_attachments>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <frontend>
+        <layout>
+            <updates>
+                <lanot_attachments>
+                    <file>lanot_attachments.xml</file>
+                </lanot_attachments>
+            </updates>
+        </layout>
+
+        <routers>
+            <attachments>
+                <use>standard</use>
+                <args>
+                    <module>Lanot_Attachments</module>
+                    <frontname>lanotattachments</frontname>
+                </args>
+            </attachments>
+        </routers>
+    </frontend>
+
+    <admin>
+        <routers>
+            <lanot_attachments>
+                <use>admin</use>
+                <args>
+                    <module>Lanot_Attachments</module>
+                    <frontName>lanotattachments</frontName>
+                </args>
+            </lanot_attachments>
+        </routers>
+    </admin>
+
+    <default>
+        <lanot_attachments>
+            <view>
+                <show_icons>1</show_icons>
+                <new_window>1</new_window>
+                <url_redirect>0</url_redirect>
+                <url_filename>1</url_filename>
+            </view>
+
+            <catalog_product>
+                <enabled>1</enabled>
+                <title>Attachments</title>
+                <class>block block-list</class>
+                <class_title>block-title</class_title>
+                <class_content>block-content</class_content>
+            </catalog_product>
+        </lanot_attachments>
+    </default>
+
+</config>

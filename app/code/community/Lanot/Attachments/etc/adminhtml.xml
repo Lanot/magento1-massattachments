@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento admin config
+ *
+ * @author Lanot
+ */
+-->
+<config>
+
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+
+                    <lanot translate="title">
+                        <title>Lanot</title>
+                        <sort_order>65</sort_order>
+                        <children>
+                            <lanot_attachments translate="title" module="lanot_attachments">
+                                <title>Lanot Attachments</title>
+                                <sort_order>65</sort_order>
+                                <children>
+                                    <manage_attachments translate="title">
+                                        <title>Manage Attachments</title>
+                                        <sort_order>0</sort_order>
+                                    </manage_attachments>
+                                </children>
+                            </lanot_attachments>
+                        </children>
+                    </lanot>
+
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <lanot_attachments translate="title" module="lanot_attachments">
+                                        <title>Lanot Attachments Configuration</title>
+                                    </lanot_attachments>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+
+                </children>
+            </admin>
+        </resources>
+    </acl>
+
+</config>

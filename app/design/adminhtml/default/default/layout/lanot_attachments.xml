@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Magento backend layout
+ *
+ * @author Lanot
+ */
+-->
+<layout>
+
+    <adminhtml_catalog_product_new>
+        <reference name="product_tabs">
+            <action method="addTab" translate="name" module="lanot_attachments">
+                <name>attachments</name>
+                <block>lanot_attachments/adminhtml_product_edit</block>
+            </action>
+        </reference>
+    </adminhtml_catalog_product_new>
+
+    <adminhtml_catalog_product_edit>
+        <reference name="product_tabs">
+            <action method="addTab" translate="name" module="lanot_attachments">
+                <name>attachments</name>
+                <block>lanot_attachments/adminhtml_product_edit</block>
+            </action>
+        </reference>
+    </adminhtml_catalog_product_edit>
+
+</layout>

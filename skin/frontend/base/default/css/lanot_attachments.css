@@ -1,0 +1,123 @@
+.lanot-attachments ul {
+    display: block;
+    padding: 5px 0px 5px 0px;
+}
+.la-icon {
+    display: block;
+    margin: 0px 0px 3px 10px;
+    height: 32px;
+    line-height: 32px;
+    font-size:14px;
+}
+.la-icon-file,
+.la-icon-url {
+    padding-left:35px;
+    background-position:left center;
+    background-repeat:no-repeat;
+    min-height:32px;
+}
+
+.la-icon-file { background-image: url('../images/lanot/attachments/32px/_page.png');}
+.la-icon-url { background-image: url('../images/lanot/attachments/32px/_blank.png');}
+
+.la-icon-doc,
+.la-icon-docx { background-image: url('../images/lanot/attachments/32px/doc.png');}
+.la-icon-xls,
+.la-icon-xlsx { background-image: url('../images/lanot/attachments/32px/xls.png');}
+
+.la-icon-3gp { background-image: url('../images/lanot/attachments/32px/3gp.png');}
+.la-icon-7z { background-image: url('../images/lanot/attachments/32px/7z.png');}
+.la-icon-ace { background-image: url('../images/lanot/attachments/32px/ace.png');}
+.la-icon-ai { background-image: url('../images/lanot/attachments/32px/ai.png');}
+.la-icon-aif { background-image: url('../images/lanot/attachments/32px/aif.png');}
+.la-icon-aiff { background-image: url('../images/lanot/attachments/32px/aiff.png');}
+.la-icon-amr { background-image: url('../images/lanot/attachments/32px/amr.png');}
+.la-icon-asf { background-image: url('../images/lanot/attachments/32px/asf.png');}
+.la-icon-asx { background-image: url('../images/lanot/attachments/32px/asx.png');}
+.la-icon-bat { background-image: url('../images/lanot/attachments/32px/bat.png');}
+.la-icon-bin { background-image: url('../images/lanot/attachments/32px/bin.png');}
+.la-icon-bmp { background-image: url('../images/lanot/attachments/32px/bmp.png');}
+.la-icon-bup { background-image: url('../images/lanot/attachments/32px/bup.png');}
+.la-icon-cab { background-image: url('../images/lanot/attachments/32px/cab.png');}
+.la-icon-cbr { background-image: url('../images/lanot/attachments/32px/cbr.png');}
+.la-icon-cda { background-image: url('../images/lanot/attachments/32px/cda.png');}
+.la-icon-cdl { background-image: url('../images/lanot/attachments/32px/cdl.png');}
+.la-icon-cdr { background-image: url('../images/lanot/attachments/32px/cdr.png');}
+.la-icon-chm { background-image: url('../images/lanot/attachments/32px/chm.png');}
+.la-icon-dat { background-image: url('../images/lanot/attachments/32px/dat.png');}
+.la-icon-divx { background-image: url('../images/lanot/attachments/32px/divx.png');}
+.la-icon-dll { background-image: url('../images/lanot/attachments/32px/dll.png');}
+.la-icon-dmg { background-image: url('../images/lanot/attachments/32px/dmg.png');}
+.la-icon-dss { background-image: url('../images/lanot/attachments/32px/dss.png');}
+.la-icon-dvf { background-image: url('../images/lanot/attachments/32px/dvf.png');}
+.la-icon-dwg { background-image: url('../images/lanot/attachments/32px/dwg.png');}
+.la-icon-eml { background-image: url('../images/lanot/attachments/32px/eml.png');}
+.la-icon-eps { background-image: url('../images/lanot/attachments/32px/eps.png');}
+.la-icon-exe { background-image: url('../images/lanot/attachments/32px/exe.png');}
+.la-icon-fla { background-image: url('../images/lanot/attachments/32px/fla.png');}
+.la-icon-flv { background-image: url('../images/lanot/attachments/32px/flv.png');}
+.la-icon-gif { background-image: url('../images/lanot/attachments/32px/gif.png');}
+.la-icon-gz { background-image: url('../images/lanot/attachments/32px/gz.png');}
+.la-icon-hqx { background-image: url('../images/lanot/attachments/32px/hqx.png');}
+.la-icon-htm { background-image: url('../images/lanot/attachments/32px/htm.png');}
+.la-icon-html { background-image: url('../images/lanot/attachments/32px/html.png');}
+.la-icon-ifo { background-image: url('../images/lanot/attachments/32px/ifo.png');}
+.la-icon-indd { background-image: url('../images/lanot/attachments/32px/indd.png');}
+.la-icon-iso { background-image: url('../images/lanot/attachments/32px/iso.png');}
+.la-icon-jar { background-image: url('../images/lanot/attachments/32px/jar.png');}
+.la-icon-jpeg { background-image: url('../images/lanot/attachments/32px/jpeg.png');}
+.la-icon-jpg { background-image: url('../images/lanot/attachments/32px/jpg.png');}
+.la-icon-lnk { background-image: url('../images/lanot/attachments/32px/lnk.png');}
+.la-icon-log { background-image: url('../images/lanot/attachments/32px/log.png');}
+.la-icon-m4a { background-image: url('../images/lanot/attachments/32px/m4a.png');}
+.la-icon-m4b { background-image: url('../images/lanot/attachments/32px/m4b.png');}
+.la-icon-m4p { background-image: url('../images/lanot/attachments/32px/m4p.png');}
+.la-icon-m4v { background-image: url('../images/lanot/attachments/32px/m4v.png');}
+.la-icon-mcd { background-image: url('../images/lanot/attachments/32px/mcd.png');}
+.la-icon-mdb { background-image: url('../images/lanot/attachments/32px/mdb.png');}
+.la-icon-mid { background-image: url('../images/lanot/attachments/32px/mid.png');}
+.la-icon-mov { background-image: url('../images/lanot/attachments/32px/mov.png');}
+.la-icon-mp-2 { background-image: url('../images/lanot/attachments/32px/mp-2.png');}
+.la-icon-mp-4 { background-image: url('../images/lanot/attachments/32px/mp-4.png');}
+.la-icon-mpeg { background-image: url('../images/lanot/attachments/32px/mpeg.png');}
+.la-icon-mpg { background-image: url('../images/lanot/attachments/32px/mpg.png');}
+.la-icon-msi { background-image: url('../images/lanot/attachments/32px/msi.png');}
+.la-icon-mswmm { background-image: url('../images/lanot/attachments/32px/mswmm.png');}
+.la-icon-ogg { background-image: url('../images/lanot/attachments/32px/ogg.png');}
+.la-icon-pdf { background-image: url('../images/lanot/attachments/32px/pdf.png');}
+.la-icon-png { background-image: url('../images/lanot/attachments/32px/png.png');}
+.la-icon-pps { background-image: url('../images/lanot/attachments/32px/pps.png');}
+.la-icon-ps { background-image: url('../images/lanot/attachments/32px/ps.png');}
+.la-icon-psd { background-image: url('../images/lanot/attachments/32px/psd.png');}
+.la-icon-pst { background-image: url('../images/lanot/attachments/32px/pst.png');}
+.la-icon-ptb { background-image: url('../images/lanot/attachments/32px/ptb.png');}
+.la-icon-pub { background-image: url('../images/lanot/attachments/32px/pub.png');}
+.la-icon-qbb { background-image: url('../images/lanot/attachments/32px/qbb.png');}
+.la-icon-qbw { background-image: url('../images/lanot/attachments/32px/qbw.png');}
+.la-icon-qxd { background-image: url('../images/lanot/attachments/32px/qxd.png');}
+.la-icon-ram { background-image: url('../images/lanot/attachments/32px/ram.png');}
+.la-icon-rar { background-image: url('../images/lanot/attachments/32px/rar.png');}
+.la-icon-rm { background-image: url('../images/lanot/attachments/32px/rm.png');}
+.la-icon-rmvb { background-image: url('../images/lanot/attachments/32px/rmvb.png');}
+.la-icon-rtf { background-image: url('../images/lanot/attachments/32px/rtf.png');}
+.la-icon-sea { background-image: url('../images/lanot/attachments/32px/sea.png');}
+.la-icon-ses { background-image: url('../images/lanot/attachments/32px/ses.png');}
+.la-icon-sit { background-image: url('../images/lanot/attachments/32px/sit.png');}
+.la-icon-sitx { background-image: url('../images/lanot/attachments/32px/sitx.png');}
+.la-icon-ss { background-image: url('../images/lanot/attachments/32px/ss.png');}
+.la-icon-swf { background-image: url('../images/lanot/attachments/32px/swf.png');}
+.la-icon-tgz { background-image: url('../images/lanot/attachments/32px/tgz.png');}
+.la-icon-thm { background-image: url('../images/lanot/attachments/32px/thm.png');}
+.la-icon-tif { background-image: url('../images/lanot/attachments/32px/tif.png');}
+.la-icon-tmp { background-image: url('../images/lanot/attachments/32px/tmp.png');}
+.la-icon-torrent { background-image: url('../images/lanot/attachments/32px/torrent.png');}
+.la-icon-ttf { background-image: url('../images/lanot/attachments/32px/ttf.png');}
+.la-icon-txt { background-image: url('../images/lanot/attachments/32px/txt.png');}
+.la-icon-vcd { background-image: url('../images/lanot/attachments/32px/vcd.png');}
+.la-icon-vob { background-image: url('../images/lanot/attachments/32px/vob.png');}
+.la-icon-wav { background-image: url('../images/lanot/attachments/32px/wav.png');}
+.la-icon-wma { background-image: url('../images/lanot/attachments/32px/wma.png');}
+.la-icon-wmv { background-image: url('../images/lanot/attachments/32px/wmv.png');}
+.la-icon-wps { background-image: url('../images/lanot/attachments/32px/wps.png');}
+.la-icon-xpi { background-image: url('../images/lanot/attachments/32px/xpi.png');}
+.la-icon-zip { background-image: url('../images/lanot/attachments/32px/zip.png');}

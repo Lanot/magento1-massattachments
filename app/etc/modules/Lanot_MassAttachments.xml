@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Lanot_MassAttachments>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Lanot_Attachments />
+            </depends>
+        </Lanot_MassAttachments>
+    </modules>
+</config>

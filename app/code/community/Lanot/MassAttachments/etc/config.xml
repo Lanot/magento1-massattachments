@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Lanot_MassAttachments>
+            <version>2.0.0</version>
+        </Lanot_MassAttachments>
+    </modules>
+
+    <global>
+
+        <helpers>
+            <lanot_massattachments>
+                <class>Lanot_MassAttachments_Helper</class>
+            </lanot_massattachments>
+        </helpers>
+
+        <blocks>
+            <lanot_massattachments>
+                <class>Lanot_MassAttachments_Block</class>
+            </lanot_massattachments>
+            <lanot_attachments>
+                <rewrite>
+                    <adminhtml_product_tab>Lanot_MassAttachments_Block_Adminhtml_Product_Tab</adminhtml_product_tab>
+                    <product_view>Lanot_MassAttachments_Block_Product_View</product_view>
+                </rewrite>
+            </lanot_attachments>
+        </blocks>
+
+        <models>
+            <lanot_massattachments>
+                <class>Lanot_MassAttachments_Model</class>
+                <resourceModel>lanot_massattachments_resource</resourceModel>
+            </lanot_massattachments>
+            <lanot_massattachments_resource>
+                <class>Lanot_MassAttachments_Model_Mysql4</class>
+                <entities>
+                    <set><table>lanot_massattachments_set</table></set>
+                    <products><table>lanot_massattachments_product</table></products>
+                    <categories><table>lanot_massattachments_category</table></categories>
+                    <cms_pages><table>lanot_massattachments_cms_page</table></cms_pages>
+                </entities>
+            </lanot_massattachments_resource>
+            <!-- REWRITE ATTACHMENTS -->
+            <lanot_attachments>
+                <rewrite>
+                    <observer>Lanot_MassAttachments_Model_Observer</observer>
+                    <attachments>Lanot_MassAttachments_Model_Attachments</attachments>
+                </rewrite>
+            </lanot_attachments>
+            <!--/REWRITE ATTACHMENTS -->
+        </models>
+        <resources>
+            <lanot_massattachments_setup>
+                <setup>
+                    <module>Lanot_MassAttachments</module>
+                </setup>
+            </lanot_massattachments_setup>
+        </resources>
+    </global>
+
+    <adminhtml>
+        <!-- OBSERVER EVENTS -->
+        <events>
+            <!-- ATTACHMENT SET EVENTS -->
+            <lanot_attachments_set_save_before>
+                <observers>
+                    <lanot_massattachments>
+                        <type>singleton</type>
+                        <class>lanot_attachments/observer</class>
+                        <method>attachmentsSetSaveBefore</method>
+                    </lanot_massattachments>
+                </observers>
+            </lanot_attachments_set_save_before>
+            <lanot_attachments_set_save_after>
+                <observers>
+                    <lanot_massattachments>
+                        <type>singleton</type>
+                        <class>lanot_attachments/observer</class>
+                        <method>attachmentsSetSaveAfter</method>
+                    </lanot_massattachments>
+                </observers>
+            </lanot_attachments_set_save_after>
+            <lanot_attachments_set_delete_before>
+                <observers>
+                    <lanot_massattachments>
+                        <type>singleton</type>
+                        <class>lanot_attachments/observer</class>
+                        <method>attachmentsSetDeleteBefore</method>
+                    </lanot_massattachments>
+                </observers>
+            </lanot_attachments_set_delete_before>
+            <lanot_attachments_set_delete_after>
+                <observers>
+                    <lanot_massattachments>
+                        <type>singleton</type>
+                        <class>lanot_attachments/observer</class>
+                        <method>attachmentsSetDeleteAfter</method>
+                    </lanot_massattachments>
+                </observers>
+            </lanot_attachments_set_delete_after>
+            <lanot_attachments_set_load_after>
+                <observers>
+                    <lanot_massattachments>
+                        <type>singleton</type>
+                        <class>lanot_attachments/observer</class>
+                        <method>initCachedPages</method>
+                    </lanot_massattachments>
+                </observers>
+            </lanot_attachments_set_load_after>
+            <lanot_attachments_set_save_commit_after>
+                <observers>
+                    <lanot_massattachments>
+                        <type>singleton</type>
+                        <class>lanot_attachments/observer</class>
+                        <method>clearCachedPages</method>
+                    </lanot_massattachments>
+                </observers>
+            </lanot_attachments_set_save_commit_after>
+            <!--/ATTACHMENT SET EVENTS -->
+        </events>
+        <!--/OBSERVER EVENTS -->
+
+        <layout>
+            <updates>
+                <lanot_massattachments>
+                    <file>lanot_massattachments.xml</file>
+                </lanot_massattachments>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <frontend>
+        <layout>
+            <updates>
+                <lanot_massattachments>
+                    <file>lanot_massattachments.xml</file>
+                </lanot_massattachments>
+            </updates>
+        </layout>
+    </frontend>
+
+    <admin>
+        <routers>
+            <lanot_massattachmnets>
+                <use>admin</use>
+                <args>
+                    <module>Lanot_MassAttachments</module>
+                    <frontName>lanotmassattachmnets</frontName>
+                </args>
+            </lanot_massattachmnets>
+        </routers>
+    </admin>
+
+    <default>
+        <lanot_attachments>
+            <catalog_category>
+                <enabled>1</enabled>
+                <title>Attachments</title>
+                <class>block block-list</class>
+                <class_title>block-title</class_title>
+                <class_content>block-content</class_content>
+            </catalog_category>
+            <cms_page>
+                <enabled>1</enabled>
+                <title>Attachments</title>
+                <class>block block-list</class>
+                <class_title>block-title</class_title>
+                <class_content>block-content</class_content>
+            </cms_page>
+        </lanot_attachments>
+    </default>
+</config>

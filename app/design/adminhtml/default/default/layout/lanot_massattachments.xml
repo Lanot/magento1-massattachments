@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Magento backend layout
+ *
+ * @author Lanot
+ */
+-->
+<layout>
+<!-- ADMIN SET -->
+
+    <!-- MAIN DATA -->
+    <lanot_massattachmnets_adminhtml_set_index>
+        <reference name="content">
+            <block type="lanot_massattachments/adminhtml_set" name="attachments_set_index" />
+        </reference>
+    </lanot_massattachmnets_adminhtml_set_index>
+
+    <lanot_massattachmnets_adminhtml_set_grid>
+        <block type="lanot_massattachments/adminhtml_set_grid" name="root"/>
+    </lanot_massattachmnets_adminhtml_set_grid>
+
+    <lanot_massattachmnets_adminhtml_set_new>
+        <update handle="lanot_massattachmnets_adminhtml_set_edit" />
+    </lanot_massattachmnets_adminhtml_set_new>
+
+    <lanot_massattachmnets_adminhtml_set_edit>
+        <update handle="editor" />
+        <reference name="content">
+            <block type="core/template" template="lanot/massattachments/js/uploader/config.phtml" name="uploader_config" />
+            <block type="lanot_massattachments/adminhtml_set_edit" name="attachments_set_edit" />
+        </reference>
+        <reference name="left">
+            <block type="adminhtml/store_switcher" name="store_switcher" as="store_switcher">
+                <action method="setUseConfirm"><params>0</params></action>
+            </block>
+            <block type="lanot_massattachments/adminhtml_set_edit_tabs" name="set_edit_tabs">
+                <action method="addTab">
+                    <name>set_main_info</name>
+                    <block>lanot_massattachments/adminhtml_set_edit_tab_main</block>
+                </action>
+                <action method="addTab">
+                    <name>set_attachments</name>
+                    <block>lanot_massattachments/adminhtml_set_edit_tab_attachments</block>
+                </action>
+                <action method="addTab">
+                    <name>set_catalog_products</name>
+                    <block>lanot_massattachments/adminhtml_set_edit_tab_products</block>
+                </action>
+                <action method="addTab">
+                    <name>set_catalog_categories</name>
+                    <block>lanot_massattachments/adminhtml_set_edit_tab_categories</block>
+                </action>
+                <action method="addTab">
+                    <name>set_cms_pages</name>
+                    <block>lanot_massattachments/adminhtml_set_edit_tab_cmspages</block>
+                </action>
+            </block>
+        </reference>
+    </lanot_massattachmnets_adminhtml_set_edit>
+    <!--/MAIN DATA -->
+
+    <!-- ASSIGNED PRODUCTS -->
+    <lanot_massattachmnets_adminhtml_set_productsgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="lanot_massattachments/adminhtml_set_edit_tab_products_grid" name="products.edit.tab.grid"/>
+            <block type="adminhtml/widget_grid_serializer" name="product_grid_serializer">
+                <reference name="product_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>products.edit.tab.grid</grid_block_name>
+                        <data_callback>getSelectedLinks</data_callback>
+                        <hidden_input_name>products</hidden_input_name>
+                        <reload_param_name>products</reload_param_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+    </lanot_massattachmnets_adminhtml_set_productsgrid>
+
+    <lanot_massattachmnets_adminhtml_set_productsgridonly>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="lanot_massattachments/adminhtml_set_edit_tab_products_grid" name="products.edit.tab.grid"/>
+        </block>
+    </lanot_massattachmnets_adminhtml_set_productsgridonly>
+    <!--/ASSIGNED PRODUCTS -->
+
+
+    <!-- ASSIGNED CATEGORIES -->
+    <lanot_massattachmnets_adminhtml_set_categoriestree>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="lanot_massattachments/adminhtml_set_edit_tab_categories_tree" name="categories.edit.tab.tree"/>
+        </block>
+    </lanot_massattachmnets_adminhtml_set_categoriestree>
+    <!--/ASSIGNED CATEGORIES -->
+
+
+    <!-- ASSIGNED CMS PAGES -->
+    <lanot_massattachmnets_adminhtml_set_cmspagesgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="lanot_massattachments/adminhtml_set_edit_tab_cmspages_grid" name="cmspages.edit.tab.grid"/>
+            <block type="adminhtml/widget_grid_serializer" name="cmspage_grid_serializer">
+                <reference name="cmspage_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>cmspages.edit.tab.grid</grid_block_name>
+                        <data_callback>getSelectedLinks</data_callback>
+                        <hidden_input_name>cmspages</hidden_input_name>
+                        <reload_param_name>cmspages</reload_param_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+    </lanot_massattachmnets_adminhtml_set_cmspagesgrid>
+
+    <lanot_massattachmnets_adminhtml_set_cmspagesgridonly>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="lanot_massattachments/adminhtml_set_edit_tab_cmspages_grid" name="cmspages.edit.tab.grid"/>
+        </block>
+    </lanot_massattachmnets_adminhtml_set_cmspagesgridonly>
+    <!--/ASSIGNED CMS PAGES -->
+
+
+    <!-- ASSOCIATED ATTACHMENTS -->
+    <lanot_massattachmnets_adminhtml_attachments_productsgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="lanot_massattachments/adminhtml_entity_edit_tab_attachments_grid_products" name="products.attachments.edit.tab.grid"/>
+        </block>
+    </lanot_massattachmnets_adminhtml_attachments_productsgrid>
+
+    <lanot_massattachmnets_adminhtml_attachments_categoriesgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="lanot_massattachments/adminhtml_entity_edit_tab_attachments_grid_categories" name="categories.attachments.edit.tab.grid"/>
+        </block>
+    </lanot_massattachmnets_adminhtml_attachments_categoriesgrid>
+
+    <lanot_massattachmnets_adminhtml_attachments_cmspagesgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="lanot_massattachments/adminhtml_entity_edit_tab_attachments_grid_cmspages" name="cmspages.attachments.edit.tab.grid"/>
+        </block>
+    </lanot_massattachmnets_adminhtml_attachments_cmspagesgrid>
+    <!--/ASSOCIATED ATTACHMENTS -->
+
+    <!-- EDIT PAGES -->
+    <adminhtml_catalog_product_edit>
+        <reference name="product_tabs">
+            <action method="addTab">
+                <name>associated_attachments</name>
+                <block>lanot_massattachments/adminhtml_entity_edit_tab_attachments_products</block>
+            </action>
+        </reference>
+    </adminhtml_catalog_product_edit>
+
+    <adminhtml_catalog_category_edit>
+        <reference name="tabs">
+            <action method="addTab">
+                <name>associated_attachments</name>
+                <block>lanot_massattachments/adminhtml_entity_edit_tab_attachments_categories</block>
+            </action>
+        </reference>
+    </adminhtml_catalog_category_edit>
+
+    <adminhtml_cms_page_edit>
+        <reference name="cms_page_edit_tabs">
+            <action method="addTab">
+                <name>associated_attachments</name>
+                <block>lanot_massattachments/adminhtml_entity_edit_tab_attachments_cmspages</block>
+            </action>
+        </reference>
+    </adminhtml_cms_page_edit>
+    <!--/EDIT PAGES -->
+
+<!-- /ADMIN SET -->
+</layout>
