@@ -1,5 +1,7 @@
 # magento1-massattachments
 
+Lanot_MassAttachments
+
 Module adds a possibility to attach a lot of attachments to Products, Categories, CMS Pages per one "SAVING".
 Admin can configure display options.
 
